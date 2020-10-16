@@ -16,8 +16,8 @@ public class MealController {
 
     private final String baseUrl = "https://www.themealdb.com/api/json/v1/1";
 
-    @GetMapping("/{mealCategory}")
-    public String getMeals(@PathVariable String mealCategory) throws IOException {
-        return remoteURLReader.readFromUrl(baseUrl + "/filter.php?c=" + mealCategory);
+    @GetMapping("/{mealId}")
+    public String getDetailedMeal(@PathVariable String mealId) throws IOException {
+        return remoteURLReader.readFromUrl(baseUrl + "/lookup.php?i=" + mealId);
     }
 }
